@@ -3145,7 +3145,6 @@
 				C2097EDF1C52326500163B5C /* Sources */,
 				C2097EE01C52326500163B5C /* Frameworks */,
 				C2097EE11C52326500163B5C /* Resources */,
-				B46DBA6792C3E056B6484AA5 /* [CP] Embed Pods Frameworks */,
 				FF9F8C675570F5C5117DA386 /* [CP] Copy Pods Resources */,
 				C23EE3CB1F738F230069885F /* CopyFiles */,
 			);
@@ -3283,21 +3282,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B46DBA6792C3E056B6484AA5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TLChat/Pods-TLChat-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CC8B46C7F9BB79BD1D1E97BD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3322,7 +3306,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TLChat/Pods-TLChat-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TLChat/Pods-TLChat-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/MWPhotoBrowser/MWPhotoBrowser.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
@@ -3335,7 +3319,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TLChat/Pods-TLChat-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TLChat/Pods-TLChat-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
