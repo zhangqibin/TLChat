@@ -16,8 +16,6 @@ typedef NS_ENUM(NSInteger, TLContactsVCSectionType) {
 typedef NS_ENUM(NSInteger, TLContactsVCCellType) {
     TLContactsVCCellTypeNew = -1,
     TLContactsVCCellTypeGroup = -2,
-    TLContactsVCCellTypeTag = -3,
-    TLContactsVCCellTypePublic = -4,
 };
 
 @interface TLContactsAngel : ZZFLEXAngel

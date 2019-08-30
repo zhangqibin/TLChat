@@ -53,7 +53,6 @@
 		C249DB502003ABF500702FA4 /* FriendGroupList.json in Resources */ = {isa = PBXBuildFile; fileRef = C249DB4B2003ABF400702FA4 /* FriendGroupList.json */; };
 		C249DB512003ABF500702FA4 /* Friends.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C249DB4C2003ABF400702FA4 /* Friends.xcassets */; };
 		C249DB852003AC4300702FA4 /* TLGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C249DB532003AC4200702FA4 /* TLGroupViewController.m */; };
-		C249DB972003AC4300702FA4 /* TLTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C249DB842003AC4300702FA4 /* TLTagsViewController.m */; };
 		C2531ABD204E3ED100D27C99 /* TLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2531ABC204E3ED000D27C99 /* TLSettingViewController.m */; };
 		C2531AC7204E3FBF00D27C99 /* TLSettingItemNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2531AC0204E3FBF00D27C99 /* TLSettingItemNormalCell.m */; };
 		C2531AC8204E3FBF00D27C99 /* TLMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C2531AC4204E3FBF00D27C99 /* TLMenuItem.m */; };
@@ -88,9 +87,6 @@
 		C29C6A92200494DD0058ED75 /* TLUserDetailTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C6A83200494DD0058ED75 /* TLUserDetailTitleCell.m */; };
 		C29C6A93200494DD0058ED75 /* TLUserDetailTagsKVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C6A86200494DD0058ED75 /* TLUserDetailTagsKVCell.m */; };
 		C29C6A94200494DD0058ED75 /* TLUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C6A89200494DD0058ED75 /* TLUserDetailViewController.m */; };
-		C29C6AA5200497030058ED75 /* TLOfficialAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C6AA1200497020058ED75 /* TLOfficialAccountViewController.m */; };
-		C29C6AA6200497030058ED75 /* TLOfficialAccountSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C6AA4200497020058ED75 /* TLOfficialAccountSearchResultViewController.m */; };
-		C29C6AE12004B1850058ED75 /* TLTagItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C6ADF2004B1850058ED75 /* TLTagItemCell.m */; };
 		C29C6B192004B8010058ED75 /* TLMobileContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C6B042004B8000058ED75 /* TLMobileContactsViewController.m */; };
 		C29C6B1A2004B8010058ED75 /* TLMobileContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C6B062004B8000058ED75 /* TLMobileContactModel.m */; };
 		C29C6B1C2004B8010058ED75 /* TLMobileContactsSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29C6B0B2004B8000058ED75 /* TLMobileContactsSearchResultViewController.m */; };
@@ -325,8 +321,6 @@
 		C249DB4E2003ABF400702FA4 /* TLFriendEventStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLFriendEventStatistics.h; sourceTree = "<group>"; };
 		C249DB532003AC4200702FA4 /* TLGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLGroupViewController.m; sourceTree = "<group>"; };
 		C249DB5C2003AC4200702FA4 /* TLGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLGroupViewController.h; sourceTree = "<group>"; };
-		C249DB7F2003AC4300702FA4 /* TLTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTagsViewController.h; sourceTree = "<group>"; };
-		C249DB842003AC4300702FA4 /* TLTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTagsViewController.m; sourceTree = "<group>"; };
 		C2531ABB204E3ED000D27C99 /* TLSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSettingViewController.h; sourceTree = "<group>"; };
 		C2531ABC204E3ED000D27C99 /* TLSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSettingViewController.m; sourceTree = "<group>"; };
 		C2531AC0204E3FBF00D27C99 /* TLSettingItemNormalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSettingItemNormalCell.m; sourceTree = "<group>"; };
@@ -417,12 +411,6 @@
 		C29C6A87200494DD0058ED75 /* TLUserDetailAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUserDetailAlbumCell.h; sourceTree = "<group>"; };
 		C29C6A88200494DD0058ED75 /* TLUserDetailViewChatButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUserDetailViewChatButtonCell.h; sourceTree = "<group>"; };
 		C29C6A89200494DD0058ED75 /* TLUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserDetailViewController.m; sourceTree = "<group>"; };
-		C29C6AA0200497020058ED75 /* TLOfficialAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLOfficialAccountViewController.h; sourceTree = "<group>"; };
-		C29C6AA1200497020058ED75 /* TLOfficialAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLOfficialAccountViewController.m; sourceTree = "<group>"; };
-		C29C6AA3200497020058ED75 /* TLOfficialAccountSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLOfficialAccountSearchResultViewController.h; sourceTree = "<group>"; };
-		C29C6AA4200497020058ED75 /* TLOfficialAccountSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLOfficialAccountSearchResultViewController.m; sourceTree = "<group>"; };
-		C29C6ADF2004B1850058ED75 /* TLTagItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTagItemCell.m; sourceTree = "<group>"; };
-		C29C6AE02004B1850058ED75 /* TLTagItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTagItemCell.h; sourceTree = "<group>"; };
 		C29C6B042004B8000058ED75 /* TLMobileContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLMobileContactsViewController.m; sourceTree = "<group>"; };
 		C29C6B062004B8000058ED75 /* TLMobileContactModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLMobileContactModel.m; sourceTree = "<group>"; };
 		C29C6B072004B8000058ED75 /* TLMobileContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLMobileContactModel.h; sourceTree = "<group>"; };
@@ -942,7 +930,6 @@
 				C249DB442003AA3F00702FA4 /* TLContactsSearchResultViewController */,
 				C249DB522003AC4200702FA4 /* TLGroupViewController */,
 				C29C6A2720048E360058ED75 /* TLGroupSearchResultViewController */,
-				C249DB7D2003AC4300702FA4 /* TLTagsViewController */,
 				C249DB482003ABF400702FA4 /* Resources */,
 			);
 			path = Contacts;
@@ -1015,16 +1002,6 @@
 				C249DB532003AC4200702FA4 /* TLGroupViewController.m */,
 			);
 			path = TLGroupViewController;
-			sourceTree = "<group>";
-		};
-		C249DB7D2003AC4300702FA4 /* TLTagsViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C29C6ADE2004B1850058ED75 /* Views */,
-				C249DB7F2003AC4300702FA4 /* TLTagsViewController.h */,
-				C249DB842003AC4300702FA4 /* TLTagsViewController.m */,
-			);
-			path = TLTagsViewController;
 			sourceTree = "<group>";
 		};
 		C2531ABA204E3ED000D27C99 /* TLSettingViewController */ = {
@@ -1303,42 +1280,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		C29C6A9E200497020058ED75 /* OfficialAccounts */ = {
-			isa = PBXGroup;
-			children = (
-				C29C6A9F200497020058ED75 /* TLOfficialAccountViewController */,
-				C29C6AA2200497020058ED75 /* TLOfficialAccountSearchResultViewController */,
-			);
-			path = OfficialAccounts;
-			sourceTree = "<group>";
-		};
-		C29C6A9F200497020058ED75 /* TLOfficialAccountViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C29C6AA0200497020058ED75 /* TLOfficialAccountViewController.h */,
-				C29C6AA1200497020058ED75 /* TLOfficialAccountViewController.m */,
-			);
-			path = TLOfficialAccountViewController;
-			sourceTree = "<group>";
-		};
-		C29C6AA2200497020058ED75 /* TLOfficialAccountSearchResultViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C29C6AA3200497020058ED75 /* TLOfficialAccountSearchResultViewController.h */,
-				C29C6AA4200497020058ED75 /* TLOfficialAccountSearchResultViewController.m */,
-			);
-			path = TLOfficialAccountSearchResultViewController;
-			sourceTree = "<group>";
-		};
-		C29C6ADE2004B1850058ED75 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				C29C6AE02004B1850058ED75 /* TLTagItemCell.h */,
-				C29C6ADF2004B1850058ED75 /* TLTagItemCell.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		C29C6AF52004B8000058ED75 /* NewFriends */ = {
 			isa = PBXGroup;
 			children = (
@@ -1594,7 +1535,6 @@
 				C249DB322003676A00702FA4 /* Contacts */,
 				C2D7CA971F72470400648CED /* Mine */,
 				C29C6AF52004B8000058ED75 /* NewFriends */,
-				C29C6A9E200497020058ED75 /* OfficialAccounts */,
 				C29C6A70200494DD0058ED75 /* UserDetail */,
 				C2D7C91F1F72470400648CED /* Chat */,
 				C2D7CBCD1F72472700648CED /* Web */,
@@ -2581,7 +2521,6 @@
 				C2D7CB441F72470400648CED /* TLBaseKeyboard.m in Sources */,
 				C2531ACF204E445500D27C99 /* TLSettingItemBaseCell.m in Sources */,
 				C243B6521F7A5B5D0059A886 /* UIButton+TLWebImage.m in Sources */,
-				C249DB972003AC4300702FA4 /* TLTagsViewController.m in Sources */,
 				C2218C2020502098005A2947 /* TLConversationAngel.m in Sources */,
 				C2D7CC541F7281D200648CED /* TLMessage.m in Sources */,
 				C2D7CB291F72470400648CED /* TLImageMessageCell.m in Sources */,
@@ -2592,7 +2531,6 @@
 				C2EE3261204F938700467298 /* TLScannerView.m in Sources */,
 				C2D7CB411F72470400648CED /* TLMoreKeyboardItem.m in Sources */,
 				C2EE3317204FFF7200467298 /* TLChatBackgroundViewController.m in Sources */,
-				C29C6AA5200497030058ED75 /* TLOfficialAccountViewController.m in Sources */,
 				C2218BEE20501D79005A2947 /* TLPictureCarouselView.m in Sources */,
 				C243B6531F7A5B5F0059A886 /* TLImageDownloader.m in Sources */,
 				C2EE3315204FFF7200467298 /* TLChatBackgroundSelectViewController.m in Sources */,
@@ -2643,7 +2581,6 @@
 				C2218C33205020B0005A2947 /* TLAddMenuView.m in Sources */,
 				C2D7CB1D1F72470400648CED /* TLTalkButton.m in Sources */,
 				C2D7CC2B1F726D7B00648CED /* TLGroup+CreateAvatar.m in Sources */,
-				C29C6AE12004B1850058ED75 /* TLTagItemCell.m in Sources */,
 				C2531B2F204E8B9E00D27C99 /* TLAccountSettingViewController.m in Sources */,
 				C278BC8C20501C800063E728 /* UIViewController+PopGesture.m in Sources */,
 				C2D7CB421F72470400648CED /* TLMoreKeyboard+CollectionView.m in Sources */,
@@ -2716,7 +2653,6 @@
 				C2D7CBD71F72472700648CED /* WKWebView+Post.m in Sources */,
 				C2D7CC7E1F72854200648CED /* TLDBMessageStore.m in Sources */,
 				C20B8325204EA0340086F5E7 /* TLSettingSectionHeaderView.m in Sources */,
-				C29C6AA6200497030058ED75 /* TLOfficialAccountSearchResultViewController.m in Sources */,
 				C24993351FFB663A00F69B16 /* UIScrollView+TLLoadMoreFooter.m in Sources */,
 				C2D7CB271F72470400648CED /* TLTextDisplayView.m in Sources */,
 				C2D7CC571F7281D200648CED /* TLVideoMessage.m in Sources */,

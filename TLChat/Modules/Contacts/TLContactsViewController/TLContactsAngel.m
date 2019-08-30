@@ -14,8 +14,6 @@
 
 #import "TLNewFriendViewController.h"
 #import "TLGroupViewController.h"
-#import "TLTagsViewController.h"
-#import "TLOfficialAccountViewController.h"
 #import "TLUserDetailViewController.h"
 
 @interface TLContactsAngel ()
@@ -47,9 +45,7 @@
     {
         TLContactsItemModel *newModel = createContactsItemModelWithTag(TLContactsVCCellTypeNew, @"friends_new", nil, LOCSTR(@"新的朋友"), nil, nil);
         TLContactsItemModel *groupModel = createContactsItemModelWithTag(TLContactsVCCellTypeGroup, @"friends_group", nil, LOCSTR(@"群聊"), nil, nil);
-        TLContactsItemModel *tagModel = createContactsItemModelWithTag(TLContactsVCCellTypeTag, @"friends_tag", nil, LOCSTR(@"标签"), nil, nil);
-        TLContactsItemModel *publicModel = createContactsItemModelWithTag(TLContactsVCCellTypePublic, @"friends_public", nil, LOCSTR(@"公众号"), nil, nil);
-        NSArray *funcationData = @[newModel, groupModel, tagModel, publicModel];
+        NSArray *funcationData = @[newModel, groupModel];
         self.addCells(NSStringFromClass([TLContactsItemCell class])).toSection(TLContactsVCSectionTypeFuncation).withDataModelArray(funcationData).selectedAction(^ (TLContactsItemModel *model) {
             @strongify(self);
             if (model.tag == TLContactsVCCellTypeNew) {
@@ -59,14 +55,6 @@
             else if (model.tag == TLContactsVCCellTypeGroup) {
                 TLGroupViewController *groupVC = [[TLGroupViewController alloc] init];
                 [self tryPushVC:groupVC];
-            }
-            else if (model.tag == TLContactsVCCellTypeTag) {
-                TLTagsViewController *tagsVC = [[TLTagsViewController alloc] init];
-                [self tryPushVC:tagsVC];
-            }
-            else if (model.tag == TLContactsVCCellTypePublic) {
-                TLOfficialAccountViewController *publicServerVC = [[TLOfficialAccountViewController alloc] init];
-                [self tryPushVC:publicServerVC];
             }
         });
     }
