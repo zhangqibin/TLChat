@@ -17,7 +17,6 @@
 {
     [tableView registerClass:[TLTextMessageCell class] forCellReuseIdentifier:@"TLTextMessageCell"];
     [tableView registerClass:[TLImageMessageCell class] forCellReuseIdentifier:@"TLImageMessageCell"];
-    [tableView registerClass:[TLExpressionMessageCell class] forCellReuseIdentifier:@"TLExpressionMessageCell"];
     [tableView registerClass:[TLVoiceMessageCell class] forCellReuseIdentifier:@"TLVoiceMessageCell"];
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"EmptyCell"];
 }
@@ -40,12 +39,6 @@
     }
     else if (message.messageType == TLMessageTypeImage) {
         TLImageMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TLImageMessageCell"];
-        [cell setMessage:message];
-        [cell setDelegate:self];
-        return cell;
-    }
-    else if (message.messageType == TLMessageTypeExpression) {
-        TLExpressionMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TLExpressionMessageCell"];
         [cell setMessage:message];
         [cell setDelegate:self];
         return cell;

@@ -61,7 +61,6 @@
 - (void)dealloc
 {
     [[TLMoreKeyboard keyboard] dismissWithAnimation:NO];
-    [[TLEmojiKeyboard keyboard] dismissWithAnimation:NO];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 #ifdef DEBUG_MEMERY
     NSLog(@"dealloc ChatBaseVC");
@@ -85,11 +84,6 @@
 - (void)setChatMoreKeyboardData:(NSMutableArray *)moreKeyboardData
 {
     [self.moreKeyboard setChatMoreKeyboardData:moreKeyboardData];
-}
-
-- (void)setChatEmojiKeyboardData:(NSMutableArray *)emojiKeyboardData
-{
-    [self.emojiKeyboard setEmojiGroupData:emojiKeyboardData];
 }
 
 - (void)resetChatVC
@@ -168,22 +162,6 @@
         [_chatBar setDelegate:self];
     }
     return _chatBar;
-}
-
-- (TLEmojiDisplayView *)emojiDisplayView
-{
-    if (_emojiDisplayView == nil) {
-        _emojiDisplayView = [[TLEmojiDisplayView alloc] init];
-    }
-    return _emojiDisplayView;
-}
-
-- (TLImageExpressionDisplayView *)imageExpressionDisplayView
-{
-    if (_imageExpressionDisplayView == nil) {
-        _imageExpressionDisplayView = [[TLImageExpressionDisplayView alloc] init];
-    }
-    return _imageExpressionDisplayView;
 }
 
 - (TLRecorderIndicatorView *)recorderIndicatorView

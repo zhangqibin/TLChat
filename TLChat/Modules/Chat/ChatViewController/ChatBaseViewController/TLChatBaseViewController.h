@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "TLChatViewControllerProxy.h"
 #import "TLChatMessageDisplayView.h"
-#import "TLEmojiDisplayView.h"
-#import "TLImageExpressionDisplayView.h"
 #import "TLRecorderIndicatorView.h"
 
 #import "TLMoreKeyboardDelegate.h"
@@ -40,11 +38,6 @@
 /// 聊天输入栏
 @property (nonatomic, strong) TLChatBar *chatBar;
 
-/// emoji展示view
-@property (nonatomic, strong) TLEmojiDisplayView *emojiDisplayView;
-
-/// 图片表情展示view
-@property (nonatomic, strong) TLImageExpressionDisplayView *imageExpressionDisplayView;
 
 /// 录音展示view
 @property (nonatomic, strong) TLRecorderIndicatorView *recorderIndicatorView;;
@@ -53,11 +46,6 @@
  *  设置“更多”键盘元素
  */
 - (void)setChatMoreKeyboardData:(NSMutableArray *)moreKeyboardData;
-
-/**
- *  设置“表情”键盘元素
- */
-- (void)setChatEmojiKeyboardData:(NSMutableArray *)emojiKeyboardData;
 
 /**
  *  重置chatVC

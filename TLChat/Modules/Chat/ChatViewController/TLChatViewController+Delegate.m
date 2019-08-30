@@ -7,8 +7,6 @@
 //
 
 #import "TLChatViewController+Delegate.h"
-#import "TLExpressionViewController.h"
-#import "TLMyExpressionViewController.h"
 #import "TLUserDetailViewController.h"
 #import <MWPhotoBrowser/MWPhotoBrowser.h>
 #import "NSFileManager+TLChat.h"
@@ -44,21 +42,6 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"选中”%@“ 按钮", funcItem.title] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
         [alert show];
     }
-}
-
-//MARK: TLEmojiKeyboardDelegate
-- (void)emojiKeyboardEmojiEditButtonDown
-{
-    TLExpressionViewController *expressionVC = [[TLExpressionViewController alloc] init];
-    UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:expressionVC];
-    [self presentViewController:navC animated:YES completion:nil];
-}
-
-- (void)emojiKeyboardMyEmojiEditButtonDown
-{
-    TLMyExpressionViewController *myExpressionVC = [[TLMyExpressionViewController alloc] init];
-    UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:myExpressionVC];
-    [self presentViewController:navC animated:YES completion:nil];
 }
 
 //MARK: TLChatViewControllerProxy

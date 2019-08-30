@@ -11,7 +11,6 @@
 #import "TLChatDetailViewController.h"
 #import "TLChatGroupDetailViewController.h"
 #import "TLMoreKBHelper.h"
-#import "TLEmojiKBHelper.h"
 #import "TLUserHelper.h"
 #import "TLChatNotificationKey.h"
 #import "TLFriendHelper.h"
@@ -21,8 +20,6 @@ static TLChatViewController *chatVC;
 @interface TLChatViewController()
 
 @property (nonatomic, strong) TLMoreKBHelper *moreKBhelper;
-
-@property (nonatomic, strong) TLEmojiKBHelper *emojiKBHelper;
 
 @property (nonatomic, strong) UIBarButtonItem *rightBarButton;
 
@@ -56,11 +53,6 @@ static TLChatViewController *chatVC;
     self.user = (id<TLChatUserProtocol>)[TLUserHelper sharedHelper].user;
     self.moreKBhelper = [[TLMoreKBHelper alloc] init];
     [self setChatMoreKeyboardData:self.moreKBhelper.chatMoreKeyboardData];
-    self.emojiKBHelper = [TLEmojiKBHelper sharedKBHelper];
-    TLWeakSelf(self);
-    [self.emojiKBHelper emojiGroupDataByUserID:[TLUserHelper sharedHelper].userID complete:^(NSMutableArray *emojiGroups) {
-        [weakself setChatEmojiKeyboardData:emojiGroups];
-    }];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetChatVC) name:NOTI_CHAT_VIEW_RESET object:nil];
 }

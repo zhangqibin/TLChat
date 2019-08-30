@@ -8,12 +8,8 @@
 
 #import "TLChatBaseViewController.h"
 #import "TLMoreKeyboard.h"
-#import "TLEmojiKeyboard.h"
 
-@interface TLChatBaseViewController (ChatBar) <TLChatBarDelegate, TLKeyboardDelegate, TLEmojiKeyboardDelegate>
-
-/// 表情键盘
-@property (nonatomic, strong, readonly) TLEmojiKeyboard *emojiKeyboard;
+@interface TLChatBaseViewController (ChatBar) <TLChatBarDelegate, TLKeyboardDelegate>
 
 /// 更多键盘
 @property (nonatomic, strong, readonly) TLMoreKeyboard *moreKeyboard;

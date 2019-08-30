@@ -10,7 +10,6 @@
 #import "TLChatViewController.h"
 #import "TLChatFontViewController.h"
 #import "TLChatBackgroundViewController.h"
-#import "TLMyExpressionViewController.h"
 
 #import "TLMessageManager.h"
 #import "TLSettingItem.h"
@@ -69,13 +68,6 @@ typedef NS_ENUM(NSInteger, TLCommonSettingVCSectionType) {
             @strongify(self);
             TLChatBackgroundViewController *chatBGSettingVC = [[TLChatBackgroundViewController alloc] init];
             PushVC(chatBGSettingVC);
-        });
-        
-        // 表情
-        self.addCell(CELL_ST_ITEM_NORMAL).toSection(sectionType).withDataModel(TLCreateSettingItem(@"我的表情")).selectedAction(^ (TLSettingItem *data) {
-            @strongify(self);
-            TLMyExpressionViewController *myExpressionVC = [[TLMyExpressionViewController alloc] init];
-            PushVC(myExpressionVC);
         });
         
         // 聊天资源

@@ -53,6 +53,8 @@
 - (NSArray *)addMenuItems
 {
     if (!_addMenuItems) {
+        return @[[self p_getMenuItemByType:1],
+                 [self p_getMenuItemByType:2],];
         return @[[self p_getMenuItemByType:0],
                  [self p_getMenuItemByType:1],
                  [self p_getMenuItemByType:2],];

@@ -26,7 +26,6 @@ typedef NS_ENUM(NSInteger, TLEmojiType) {
 typedef NS_ENUM(NSInteger, TLChatBarStatus) {
     TLChatBarStatusInit,
     TLChatBarStatusVoice,
-    TLChatBarStatusEmoji,
     TLChatBarStatusMore,
     TLChatBarStatusKeyboard,
 };

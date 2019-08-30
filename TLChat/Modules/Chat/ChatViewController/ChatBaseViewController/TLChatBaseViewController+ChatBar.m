@@ -19,8 +19,6 @@
 #pragma mark - # Public Methods
 - (void)loadKeyboard
 {
-    [self.emojiKeyboard setKeyboardDelegate:self];
-    [self.emojiKeyboard setDelegate:self];
     [self.moreKeyboard setKeyboardDelegate:self];
     [self.moreKeyboard setDelegate:self];
 }
@@ -29,10 +27,6 @@
 {
     if (curStatus == TLChatBarStatusMore) {
         [self.moreKeyboard dismissWithAnimation:YES];
-        curStatus = TLChatBarStatusInit;
-    }
-    else if (curStatus == TLChatBarStatusEmoji) {
-        [self.emojiKeyboard dismissWithAnimation:YES];
         curStatus = TLChatBarStatusInit;
     }
     [self.chatBar resignFirstResponder];
@@ -55,9 +49,6 @@
     if (lastStatus == TLChatBarStatusMore) {
         [self.moreKeyboard dismissWithAnimation:NO];
     }
-    else if (lastStatus == TLChatBarStatusEmoji) {
-        [self.emojiKeyboard dismissWithAnimation:NO];
-    }
     [self.messageDisplayView scrollToBottomWithAnimation:YES];
 }
 
@@ -67,12 +58,12 @@
         return;
     }
     CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    if (lastStatus == TLChatBarStatusMore || lastStatus == TLChatBarStatusEmoji) {
+    if (lastStatus == TLChatBarStatusMore) {
         if (keyboardFrame.size.height <= HEIGHT_CHAT_KEYBOARD) {
             return;
         }
     }
-    else if (curStatus == TLChatBarStatusEmoji || curStatus == TLChatBarStatusMore) {
+    else if (curStatus == TLChatBarStatusMore) {
         return;
     }
     [self.chatBar mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -87,7 +78,7 @@
     if (curStatus != TLChatBarStatusKeyboard && lastStatus != TLChatBarStatusKeyboard) {
         return;
     }
-    if (curStatus == TLChatBarStatusEmoji || curStatus == TLChatBarStatusMore) {
+    if (curStatus == TLChatBarStatusMore) {
         return;
     }
     [self.chatBar mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -189,20 +180,11 @@
         if (fromStatus == TLChatBarStatusMore) {
             [self.moreKeyboard dismissWithAnimation:YES];
         }
-        else if (fromStatus == TLChatBarStatusEmoji) {
-            [self.emojiKeyboard dismissWithAnimation:YES];
-        }
     }
     else if (toStatus == TLChatBarStatusVoice) {
         if (fromStatus == TLChatBarStatusMore) {
             [self.moreKeyboard dismissWithAnimation:YES];
         }
-        else if (fromStatus == TLChatBarStatusEmoji) {
-            [self.emojiKeyboard dismissWithAnimation:YES];
-        }
-    }
-    else if (toStatus == TLChatBarStatusEmoji) {
-        [self.emojiKeyboard showInView:self.view withAnimation:YES];
     }
     else if (toStatus == TLChatBarStatusMore) {
         [self.moreKeyboard showInView:self.view withAnimation:YES];
@@ -222,10 +204,7 @@
 
 - (void)chatKeyboardDidShow:(id)keyboard animated:(BOOL)animated
 {
-    if (curStatus == TLChatBarStatusMore && lastStatus == TLChatBarStatusEmoji) {
-        [self.emojiKeyboard dismissWithAnimation:NO];
-    }
-    else if (curStatus == TLChatBarStatusEmoji && lastStatus == TLChatBarStatusMore) {
+    if (lastStatus == TLChatBarStatusMore) {
         [self.moreKeyboard dismissWithAnimation:NO];
     }
     [self.messageDisplayView scrollToBottomWithAnimation:YES];
@@ -240,75 +219,12 @@
     [self.messageDisplayView scrollToBottomWithAnimation:YES];
 }
 
-//MARK: TLEmojiKeyboardDelegate
-- (void)emojiKeyboard:(TLEmojiKeyboard *)emojiKB didSelectedEmojiItem:(TLExpressionModel *)emoji
-{
-    if (emoji.type == TLEmojiTypeEmoji || emoji.type == TLEmojiTypeFace) {
-        [self.chatBar addEmojiString:emoji.name];
-    }
-    else {
-        TLExpressionMessage *message = [[TLExpressionMessage alloc] init];
-        message.emoji = emoji;
-        [self sendMessage:message];
-    }
-}
-
-- (void)emojiKeyboardSendButtonDown
-{
-    [self.chatBar sendCurrentText];
-}
-
-- (void)emojiKeyboardDeleteButtonDown
-{
-    [self.chatBar deleteLastCharacter];
-}
-
-- (void)emojiKeyboard:(TLEmojiKeyboard *)emojiKB didTouchEmojiItem:(TLExpressionModel *)emoji atRect:(CGRect)rect
-{
-    if (emoji.type == TLEmojiTypeEmoji || emoji.type == TLEmojiTypeFace) {
-        if (self.emojiDisplayView.superview == nil) {
-            [self.emojiKeyboard addSubview:self.emojiDisplayView];
-        }
-        [self.emojiDisplayView displayEmoji:emoji atRect:rect];
-    }
-    else {
-        if (self.imageExpressionDisplayView.superview == nil) {
-            [self.emojiKeyboard addSubview:self.imageExpressionDisplayView];
-        }
-        [self.imageExpressionDisplayView displayEmoji:emoji atRect:rect];
-    }
-}
-
-- (void)emojiKeyboardCancelTouchEmojiItem:(TLEmojiKeyboard *)emojiKB
-{
-    if (self.emojiDisplayView.superview != nil) {
-        [self.emojiDisplayView removeFromSuperview];
-    }
-    else if (self.imageExpressionDisplayView.superview != nil) {
-        [self.imageExpressionDisplayView removeFromSuperview];
-    }
-}
-
-- (void)emojiKeyboard:(TLEmojiKeyboard *)emojiKB selectedEmojiGroupType:(TLEmojiType)type
-{
-    if (type == TLEmojiTypeEmoji || type == TLEmojiTypeFace) {
-        [self.chatBar setActivity:YES];
-    }
-    else {
-        [self.chatBar setActivity:NO];
-    }
-}
-
 - (BOOL)chatInputViewHasText
 {
     return self.chatBar.curText.length == 0 ? NO : YES;
 }
 
 #pragma mark - # Getter
-- (TLEmojiKeyboard *)emojiKeyboard
-{
-    return [TLEmojiKeyboard keyboard];
-}
 
 - (TLMoreKeyboard *)moreKeyboard
 {

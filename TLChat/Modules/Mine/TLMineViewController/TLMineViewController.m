@@ -11,8 +11,6 @@
 #import "TLUserHelper.h"
 
 #import "TLMineInfoViewController.h"
-#import "TLWalletViewController.h"
-#import "TLExpressionViewController.h"
 #import "TLSettingViewController.h"
 
 typedef NS_ENUM(NSInteger, TLMineSectionTag) {
@@ -68,44 +66,16 @@ typedef NS_ENUM(NSInteger, TLMineSectionTag) {
         });
     }
     
-    // 钱包
-    {
-        NSInteger sectionTag = TLMineSectionTagWallet;
-        self.addSection(sectionTag).sectionInsets(UIEdgeInsetsMake(20, 0, 0, 0));
-        TLMenuItem *wallet = createMenuItem(@"mine_wallet", LOCSTR(@"钱包"));
-        [wallet setSubTitle:@"新入账1024元"];
-        [wallet setBadge:@""];
-        self.addCell(CELL_MENU_ITEM).toSection(sectionTag).withDataModel(wallet).selectedAction(^ (id data) {
-            @strongify(self);
-            TLWalletViewController *walletVC = [[TLWalletViewController alloc] init];
-            PushVC(walletVC);
-        });
-    }
-    
     // 功能
     {
         NSInteger sectionTag = TLMineSectionTagFounction;
         self.addSection(sectionTag).sectionInsets(UIEdgeInsetsMake(20, 0, 0, 0));
         
         // 收藏
-//        TLMenuItem *collect = createMenuItem(@"mine_favorites", LOCSTR(@"收藏"));
-//        self.addCell(CELL_MENU_ITEM).toSection(sectionTag).withDataModel(collect);
-        
-        // 相册
-        TLMenuItem *album = createMenuItem(@"mine_album", LOCSTR(@"相册"));
-        self.addCell(CELL_MENU_ITEM).toSection(sectionTag).withDataModel(album);
-        
-        // 卡包
-//        TLMenuItem *card = createMenuItem(@"mine_card", LOCSTR(@"卡包"));
-//        self.addCell(CELL_MENU_ITEM).toSection(sectionTag).withDataModel(card);
-        
-        // 表情
-        TLMenuItem *expression = createMenuItem(@"mine_expression", LOCSTR(@"表情"));
-        [expression setBadge:@"NEW"];
-        self.addCell(CELL_MENU_ITEM).toSection(sectionTag).withDataModel(expression).selectedAction(^ (id data) {
+        TLMenuItem *collect = createMenuItem(@"mine_favorites", LOCSTR(@"收藏"));
+        self.addCell(CELL_MENU_ITEM).toSection(sectionTag).withDataModel(collect).selectedAction(^ (id data) {
             @strongify(self);
-            TLExpressionViewController *expressionVC = [[TLExpressionViewController alloc] init];
-            PushVC(expressionVC);
+           
         });
     }
     

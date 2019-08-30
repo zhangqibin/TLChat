@@ -9,7 +9,6 @@
 #import "TLChatMessageDisplayView.h"
 #import "TLTextMessageCell.h"
 #import "TLImageMessageCell.h"
-#import "TLExpressionMessageCell.h"
 #import "TLVoiceMessageCell.h"
 
 @interface TLChatMessageDisplayView (Delegate) <UITableViewDelegate, UITableViewDataSource, TLMessageCellDelegate, TLActionSheetDelegate>

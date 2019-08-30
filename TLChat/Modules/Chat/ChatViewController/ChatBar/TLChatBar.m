@@ -111,7 +111,7 @@
 
 - (BOOL)isFirstResponder
 {
-    if (self.status == TLChatBarStatusEmoji || self.status == TLChatBarStatusKeyboard || self.status == TLChatBarStatusMore) {
+    if (self.status == TLChatBarStatusKeyboard || self.status == TLChatBarStatusMore) {
         return YES;
     }
     return NO;
@@ -140,9 +140,6 @@
     if (self.status != TLChatBarStatusKeyboard) {
         if (_delegate && [_delegate respondsToSelector:@selector(chatBar:changeStatusFrom:to:)]) {
             [self.delegate chatBar:self changeStatusFrom:self.status to:TLChatBarStatusKeyboard];
-        }
-        if (self.status == TLChatBarStatusEmoji) {
-            [self.emojiButton setImage:kEmojiImage imageHL:kEmojiImageHL];
         }
         else if (self.status == TLChatBarStatusMore) {
             [self.moreButton setImage:kMoreImage imageHL:kMoreImageHL];
@@ -194,15 +191,7 @@
 #pragma mark - Event Response
 - (void)modeButtonDown
 {
-    if (self.status == TLChatBarStatusEmoji) {
-        if (_delegate && [_delegate respondsToSelector:@selector(chatBar:changeStatusFrom:to:)]) {
-            [self.delegate chatBar:self changeStatusFrom:self.status to:TLChatBarStatusInit];
-        }
-        [self.emojiButton setImage:kEmojiImage imageHL:kEmojiImageHL];
-        self.status = TLChatBarStatusInit;
-
-    }
-    else if (self.status == TLChatBarStatusMore) {
+    if (self.status == TLChatBarStatusMore) {
         if (_delegate && [_delegate respondsToSelector:@selector(chatBar:changeStatusFrom:to:)]) {
             [self.delegate chatBar:self changeStatusFrom:self.status to:TLChatBarStatusInit];
         }
@@ -244,9 +233,6 @@ static NSString *textRec = @"";
         if (self.status == TLChatBarStatusKeyboard) {
             [self.textView resignFirstResponder];
         }
-        else if (self.status == TLChatBarStatusEmoji) {
-            [self.emojiButton setImage:kEmojiImage imageHL:kEmojiImageHL];
-        }
         else if (self.status == TLChatBarStatusMore) {
             [self.moreButton setImage:kMoreImage imageHL:kMoreImageHL];
         }
@@ -259,31 +245,7 @@ static NSString *textRec = @"";
 
 - (void)emojiButtonDown
 {
-    // 开始文字输入
-    if (self.status == TLChatBarStatusEmoji) {
-        if (_delegate && [_delegate respondsToSelector:@selector(chatBar:changeStatusFrom:to:)]) {
-            [self.delegate chatBar:self changeStatusFrom:self.status to:TLChatBarStatusKeyboard];
-        }
-        [self.emojiButton setImage:kEmojiImage imageHL:kEmojiImageHL];
-        [self.textView becomeFirstResponder];
-        self.status = TLChatBarStatusKeyboard;
-    }
-    else {      // 打开表情键盘
-        if (_delegate && [_delegate respondsToSelector:@selector(chatBar:changeStatusFrom:to:)]) {
-            [self.delegate chatBar:self changeStatusFrom:self.status to:TLChatBarStatusEmoji];
-        }
-        if (self.status == TLChatBarStatusVoice) {
-            [self.voiceButton setImage:kVoiceImage imageHL:kVoiceImageHL];
-            [self.talkButton setHidden:YES];
-            [self.textView setHidden:NO];
-        }
-        else if (self.status == TLChatBarStatusMore) {
-            [self.moreButton setImage:kMoreImage imageHL:kMoreImageHL];
-        }
-        [self.emojiButton setImage:kKeyboardImage imageHL:kKeyboardImageHL];
-        [self.textView resignFirstResponder];
-        self.status = TLChatBarStatusEmoji;
-    }
+    
 }
 
 - (void)moreButtonDown
@@ -305,9 +267,6 @@ static NSString *textRec = @"";
             [self.voiceButton setImage:kVoiceImage imageHL:kVoiceImageHL];
             [self.talkButton setHidden:YES];
             [self.textView setHidden:NO];
-        }
-        else if (self.status == TLChatBarStatusEmoji) {
-            [self.emojiButton setImage:kEmojiImage imageHL:kEmojiImageHL];
         }
         [self.moreButton setImage:kKeyboardImage imageHL:kKeyboardImageHL];
         [self.textView resignFirstResponder];
