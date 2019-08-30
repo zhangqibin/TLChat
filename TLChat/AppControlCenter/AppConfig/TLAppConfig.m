@@ -31,9 +31,6 @@
         case TLAddMneuTypeAddFriend:        // 添加好友
             return [TLAddMenuItem createWithType:TLAddMneuTypeAddFriend title:LOCSTR(@"添加朋友") iconPath:@"nav_menu_addfriend" className:@"TLAddContactsViewController"];
             break;
-        case TLAddMneuTypeWallet:           // 收付款
-            return [TLAddMenuItem createWithType:TLAddMneuTypeWallet title:LOCSTR(@"收付款") iconPath:@"nav_menu_wallet" className:@"TLWalletViewController"];
-            break;
         case TLAddMneuTypeScan:             // 扫一扫
             return [TLAddMenuItem createWithType:TLAddMneuTypeScan title:LOCSTR(@"扫一扫") iconPath:@"nav_menu_scan" className:@"TLScanningViewController"];
             break;
@@ -58,8 +55,7 @@
     if (!_addMenuItems) {
         return @[[self p_getMenuItemByType:0],
                  [self p_getMenuItemByType:1],
-                 [self p_getMenuItemByType:2],
-                 [self p_getMenuItemByType:3],];
+                 [self p_getMenuItemByType:2],];
     }
     return _addMenuItems;
 }
