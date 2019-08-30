@@ -44,8 +44,9 @@
     self.addSection(TLContactsVCSectionTypeFuncation);
     {
         TLContactsItemModel *newModel = createContactsItemModelWithTag(TLContactsVCCellTypeNew, @"friends_new", nil, LOCSTR(@"新的朋友"), nil, nil);
-        TLContactsItemModel *groupModel = createContactsItemModelWithTag(TLContactsVCCellTypeGroup, @"friends_group", nil, LOCSTR(@"群聊"), nil, nil);
-        NSArray *funcationData = @[newModel, groupModel];
+//        TLContactsItemModel *groupModel = createContactsItemModelWithTag(TLContactsVCCellTypeGroup, @"friends_group", nil, LOCSTR(@"群聊"), nil, nil);
+//        NSArray *funcationData = @[newModel, groupModel];
+        NSArray *funcationData = @[newModel];
         self.addCells(NSStringFromClass([TLContactsItemCell class])).toSection(TLContactsVCSectionTypeFuncation).withDataModelArray(funcationData).selectedAction(^ (TLContactsItemModel *model) {
             @strongify(self);
             if (model.tag == TLContactsVCCellTypeNew) {
