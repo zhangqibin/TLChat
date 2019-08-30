@@ -23,39 +23,21 @@
 - (void)p_initTestData
 {
     TLMoreKeyboardItem *imageItem = [TLMoreKeyboardItem createByType:TLMoreKeyboardItemTypeImage
-                                                               title:@"照片"
+                                                               title:@"相册"
                                                            imagePath:@"moreKB_image"];
     TLMoreKeyboardItem *cameraItem = [TLMoreKeyboardItem createByType:TLMoreKeyboardItemTypeCamera
-                                                                title:@"拍摄"
+                                                                title:@"相机"
                                                             imagePath:@"moreKB_video"];
-    TLMoreKeyboardItem *videoItem = [TLMoreKeyboardItem createByType:TLMoreKeyboardItemTypeVideo
-                                                               title:@"小视频"
-                                                           imagePath:@"moreKB_sight"];
-    TLMoreKeyboardItem *videoCallItem = [TLMoreKeyboardItem createByType:TLMoreKeyboardItemTypeVideoCall
-                                                                   title:@"视频聊天"
-                                                               imagePath:@"moreKB_video_call"];
-    TLMoreKeyboardItem *walletItem = [TLMoreKeyboardItem createByType:TLMoreKeyboardItemTypeWallet
-                                                                title:@"红包"
-                                                            imagePath:@"moreKB_wallet"];
-    TLMoreKeyboardItem *transferItem = [TLMoreKeyboardItem createByType:TLMoreKeyboardItemTypeTransfer
-                                                                  title:@"转账"
-                                                              imagePath:@"moreKB_pay"];
+    TLMoreKeyboardItem *fileCallItem = [TLMoreKeyboardItem createByType:TLMoreKeyboardItemTypeFile
+                                                                   title:@"文件"
+                                                               imagePath:@"moreKB_wallet"];
+    TLMoreKeyboardItem *businessCardItem = [TLMoreKeyboardItem createByType:TLMoreKeyboardItemTypeBusinessCard
+                                                                      title:@"个人名片"
+                                                                  imagePath:@"moreKB_friendcard"];
     TLMoreKeyboardItem *positionItem = [TLMoreKeyboardItem createByType:TLMoreKeyboardItemTypePosition
                                                                   title:@"位置"
                                                               imagePath:@"moreKB_location"];
-    TLMoreKeyboardItem *favoriteItem = [TLMoreKeyboardItem createByType:TLMoreKeyboardItemTypeFavorite
-                                                                  title:@"收藏"
-                                                              imagePath:@"moreKB_favorite"];
-    TLMoreKeyboardItem *businessCardItem = [TLMoreKeyboardItem createByType:TLMoreKeyboardItemTypeBusinessCard
-                                                                      title:@"个人名片"
-                                                                  imagePath:@"moreKB_friendcard" ];
-    TLMoreKeyboardItem *voiceItem = [TLMoreKeyboardItem createByType:TLMoreKeyboardItemTypeVoice
-                                                               title:@"语音输入"
-                                                           imagePath:@"moreKB_voice"];
-    TLMoreKeyboardItem *cardsItem = [TLMoreKeyboardItem createByType:TLMoreKeyboardItemTypeCards
-                                                               title:@"卡券"
-                                                           imagePath:@"moreKB_wallet"];
-    [self.chatMoreKeyboardData addObjectsFromArray:@[imageItem, cameraItem, videoItem, videoCallItem, walletItem, transferItem, positionItem, favoriteItem, businessCardItem, voiceItem, cardsItem]];
+    [self.chatMoreKeyboardData addObjectsFromArray:@[imageItem, cameraItem, fileCallItem, businessCardItem, positionItem]];
 }
 
 @end

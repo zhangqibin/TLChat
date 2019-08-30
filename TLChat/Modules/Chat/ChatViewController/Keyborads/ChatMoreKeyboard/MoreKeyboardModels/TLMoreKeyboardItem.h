@@ -11,15 +11,9 @@
 typedef NS_ENUM(NSUInteger, TLMoreKeyboardItemType) {
     TLMoreKeyboardItemTypeImage,
     TLMoreKeyboardItemTypeCamera,
-    TLMoreKeyboardItemTypeVideo,
-    TLMoreKeyboardItemTypeVideoCall,
-    TLMoreKeyboardItemTypeWallet,
-    TLMoreKeyboardItemTypeTransfer,
-    TLMoreKeyboardItemTypePosition,
-    TLMoreKeyboardItemTypeFavorite,
+    TLMoreKeyboardItemTypeFile,
     TLMoreKeyboardItemTypeBusinessCard,
-    TLMoreKeyboardItemTypeVoice,
-    TLMoreKeyboardItemTypeCards,
+    TLMoreKeyboardItemTypePosition
 };
 
 @interface TLMoreKeyboardItem : NSObject
