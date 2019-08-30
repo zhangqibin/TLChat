@@ -70,25 +70,25 @@ typedef NS_ENUM(NSInteger, TLMineInfoVCSectionType) {
             PushVC(myQRCodeVC);
         });
         
-        // 更多
-        self.addCell(CELL_ST_ITEM_NORMAL).toSection(sectionTag).withDataModel(TLCreateSettingItem(@"更多")).selectedAction(^ (id data) {
+        // 手机号
+        self.addCell(CELL_ST_ITEM_NORMAL).toSection(sectionTag).withDataModel(TLCreateSettingItem(@"手机号")).selectedAction(^ (id data) {
             
         });
     }
     
     {
-        NSInteger sectionTag = TLMineInfoVCSectionTypeMore;
-        self.addSection(sectionTag).sectionInsets(UIEdgeInsetsMake(20, 0, 40, 0));
-        
-        // 我的地址
-        self.addCell(CELL_ST_ITEM_NORMAL).toSection(sectionTag).withDataModel(TLCreateSettingItem(@"我的地址")).selectedAction(^ (id data) {
-            
-        });
-        
-        // 我的发票抬头
-        self.addCell(CELL_ST_ITEM_NORMAL).toSection(sectionTag).withDataModel(TLCreateSettingItem(@"我的发票抬头")).selectedAction(^ (id data) {
-            
-        });
+//        NSInteger sectionTag = TLMineInfoVCSectionTypeMore;
+//        self.addSection(sectionTag).sectionInsets(UIEdgeInsetsMake(20, 0, 40, 0));
+//        
+//        // 我的地址
+//        self.addCell(CELL_ST_ITEM_NORMAL).toSection(sectionTag).withDataModel(TLCreateSettingItem(@"我的地址")).selectedAction(^ (id data) {
+//            
+//        });
+//        
+//        // 我的发票抬头
+//        self.addCell(CELL_ST_ITEM_NORMAL).toSection(sectionTag).withDataModel(TLCreateSettingItem(@"我的发票抬头")).selectedAction(^ (id data) {
+//            
+//        });
     }
     
     [self reloadView];

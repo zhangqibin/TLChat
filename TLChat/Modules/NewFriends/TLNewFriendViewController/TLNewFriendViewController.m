@@ -10,7 +10,6 @@
 #import "TLFriendFindViewController.h"
 #import "TLSearchController.h"
 #import "TLAddContactsViewController.h"
-#import "TLMobileContactsViewController.h"
 #import "TLNewFriendFuncationCell.h"
 
 typedef NS_ENUM(NSInteger, TLNewFriendVCSectionType) {
@@ -51,8 +50,7 @@ typedef NS_ENUM(NSInteger, TLNewFriendVCSectionType) {
     self.tableViewAngel.addSection(TLNewFriendVCSectionTypeFuncation);
     TLNewFriendFuncationModel *model = createNewFriendFuncationModel(@"newFriend_contacts", LOCSTR(@"添加手机联系人"));
     self.tableViewAngel.addCell(@"TLNewFriendFuncationCell").toSection(TLNewFriendVCSectionTypeFuncation).withDataModel(model).selectedAction(^(id data){
-        TLMobileContactsViewController *contactsVC = [[TLMobileContactsViewController alloc] init];
-        PushVC(contactsVC);
+
     });
     
     [self.tableView reloadData];
