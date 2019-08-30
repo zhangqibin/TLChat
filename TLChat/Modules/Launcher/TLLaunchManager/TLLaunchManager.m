@@ -12,7 +12,6 @@
 
 #import "TLConversationViewController.h"
 #import "TLContactsViewController.h"
-#import "TLDiscoverViewController.h"
 #import "TLMineViewController.h"
 #import "TLAccountViewController.h"
 
@@ -76,12 +75,10 @@
 {
     TLConversationViewController *conversationVC = [[TLConversationViewController alloc] init];
     TLContactsViewController *friendsVC = [[TLContactsViewController alloc] init];
-    TLDiscoverViewController *discoverVC = [[TLDiscoverViewController alloc] init];
     TLMineViewController *mineVC = [[TLMineViewController alloc] init];
     
     NSArray *data = @[addNavigationController(conversationVC),
                       addNavigationController(friendsVC),
-                      addNavigationController(discoverVC),
                       addNavigationController(mineVC),
                       ];
     return data;
